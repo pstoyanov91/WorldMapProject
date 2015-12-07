@@ -1,0 +1,19 @@
+package module2;
+
+import processing.core.PApplet;
+import processing.core.PImage;
+
+public class DrawSun extends PApplet {
+	private String url = "C:\\Users\\cpt2pes\\Pictures\\beach.jpg";
+	private PImage backgroudImg;
+	
+	public void setup(){
+		size(1280,800);
+		this.backgroudImg = loadImage(url, "jpg");
+	}
+	
+	public void draw(){
+		this.backgroudImg.resize(0, height);
+		image (this.backgroudImg, 0 ,0);
+	}
+}

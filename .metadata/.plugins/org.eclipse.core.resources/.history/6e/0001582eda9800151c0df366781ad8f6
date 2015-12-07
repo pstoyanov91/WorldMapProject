@@ -1,0 +1,19 @@
+package module2;
+
+import processing.core.PApplet;
+import processing.core.PImage;
+
+public class DrawSun extends PApplet {
+	private String url = "https://processing.org/img/processing-web.png";
+	private PImage backgroudImg;
+	
+	public void setup(){
+		size(200,200);
+		this.backgroudImg = loadImage(url, "jpg");
+	}
+	
+	public void draw(){
+		this.backgroudImg.resize(200, 200);
+		image (this.backgroudImg, 0 ,0);
+	}
+}

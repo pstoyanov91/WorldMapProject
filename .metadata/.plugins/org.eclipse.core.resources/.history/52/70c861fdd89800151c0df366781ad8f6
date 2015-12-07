@@ -1,0 +1,7 @@
+package module2;
+
+import processing.core.PApplet;
+
+public class DrawSun extends PApplet {
+	
+}
