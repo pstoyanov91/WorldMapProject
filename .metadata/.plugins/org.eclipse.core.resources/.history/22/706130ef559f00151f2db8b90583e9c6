@@ -185,30 +185,16 @@ public class EarthquakeCityMap extends PApplet {
 	private void printQuakes() 
 	{
 		int oceanEarthquakesCount = 0;
-		int currCountryQuakesCount = 0;
-		
-		for(Marker country : this.countryMarkers){		
+		for(Marker country : this.countryMarkers){
+			int currCountryQuakesCount = 0;
 			String currCountryName = country.getProperty("name").toString();
+			System.out.println(currCountryName);
 			for(Marker earthquake : this.quakeMarkers){
-				
-				if(((EarthquakeMarker) earthquake).isOnLand()){
-					String earthQuakeCountry = earthquake.getProperty("country").toString();
-					if(earthQuakeCountry.equalsIgnoreCase(currCountryName)){
-						currCountryQuakesCount++;
-					}
+				if(earthquake.getProperty("country").toString().equalsIgnoreCase(currCountryName)){
+					currCountryQuakesCount++;
 				}
-				
 			}
-			
-			if(currCountryQuakesCount == 0){
-				oceanEarthquakesCount++;
-			}else{
-				System.out.println(currCountryName + ": " + currCountryQuakesCount + " earthquakes" );
-			}
-			currCountryQuakesCount = 0;
 		}
-		
-		System.out.println("Ocean earthquakes: " + oceanEarthquakesCount);
 	}
 	
 	

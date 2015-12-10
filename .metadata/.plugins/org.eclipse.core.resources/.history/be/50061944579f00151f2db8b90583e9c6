@@ -189,9 +189,10 @@ public class EarthquakeCityMap extends PApplet {
 		
 		for(Marker country : this.countryMarkers){		
 			String currCountryName = country.getProperty("name").toString();
+			System.out.println(currCountryName);
 			for(Marker earthquake : this.quakeMarkers){
 				
-				if(((EarthquakeMarker) earthquake).isOnLand()){
+				if(earthquake.isOnLand()){
 					String earthQuakeCountry = earthquake.getProperty("country").toString();
 					if(earthQuakeCountry.equalsIgnoreCase(currCountryName)){
 						currCountryQuakesCount++;

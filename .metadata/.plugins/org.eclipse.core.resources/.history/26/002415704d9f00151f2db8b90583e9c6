@@ -46,8 +46,8 @@ public class EarthquakeCityMap extends PApplet {
 	private String earthquakesURL = "http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/2.5_week.atom";
 	
 	// The files containing city names and info and country names and info
-	private String cityFile = "../data/city-data.json";
-	private String countryFile = "../data/countries.geo.json";
+	private String cityFile = "city-data.json";
+	private String countryFile = "countries.geo.json";
 	
 	// The map
 	private UnfoldingMap map;
@@ -162,15 +162,9 @@ public class EarthquakeCityMap extends PApplet {
 	// set this "country" property already.  Otherwise it returns false.
 	private boolean isLand(PointFeature earthquake) {
 		
-		// Loop over all countries to check if location is in any of them
+		// IMPLEMENT THIS: loop over all countries to check if location is in any of them
 		
-		for(Marker country : this.countryMarkers){
-			
-			boolean isInCountry = this.isInCountry(earthquake, country);
-			if(isInCountry){
-				return true;
-			}
-		}
+		// TODO: Implement this method using the helper method isInCountry
 		
 		// not inside any country
 		return false;
@@ -184,31 +178,7 @@ public class EarthquakeCityMap extends PApplet {
 	// And LandQuakeMarkers have a "country" property set.
 	private void printQuakes() 
 	{
-		int oceanEarthquakesCount = 0;
-		int currCountryQuakesCount = 0;
-		
-		for(Marker country : this.countryMarkers){		
-			String currCountryName = country.getProperty("name").toString();
-			for(Marker earthquake : this.quakeMarkers){
-				
-				if(((EarthquakeMarker) earthquake).isOnLand()){
-					String earthQuakeCountry = earthquake.getProperty("country").toString();
-					if(earthQuakeCountry.equalsIgnoreCase(currCountryName)){
-						currCountryQuakesCount++;
-					}
-				}
-				
-			}
-			
-			if(currCountryQuakesCount == 0){
-				oceanEarthquakesCount++;
-			}else{
-				System.out.println(currCountryName + ": " + currCountryQuakesCount + " earthquakes" );
-			}
-			currCountryQuakesCount = 0;
-		}
-		
-		System.out.println("Ocean earthquakes: " + oceanEarthquakesCount);
+		// TODO: Implement this method
 	}
 	
 	
