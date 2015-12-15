@@ -5,7 +5,6 @@
 <fullyQualifiedTypeName name="de.fhpotsdam.unfolding.providers.Microsoft.MicrosoftProvider"/>
 <fullyQualifiedTypeName name="de.fhpotsdam.unfolding.geo.Location"/>
 <fullyQualifiedTypeName name="processing.core.PImage"/>
-<fullyQualifiedTypeName name="processing.core.PApplet"/>
 <fullyQualifiedTypeName name="de.fhpotsdam.unfolding.UnfoldingMap"/>
 <fullyQualifiedTypeName name="de.fhpotsdam.unfolding.providers.Google"/>
 <fullyQualifiedTypeName name="de.fhpotsdam.unfolding.providers.Google.GoogleMapProvider"/>
@@ -30,7 +29,13 @@
 <fullyQualifiedTypeName name="de.fhpotsdam.unfolding.data.GeoJSONReader"/>
 <fullyQualifiedTypeName name="de.fhpotsdam.unfolding.utils.MapUtils"/>
 <fullyQualifiedTypeName name="de.fhpotsdam.unfolding.data.PointFeature"/>
-<fullyQualifiedTypeName name="de.fhpotsdam.unfolding.marker.SimplePointMarker"/>
 <fullyQualifiedTypeName name="java.lang.Object"/>
 <fullyQualifiedTypeName name="module4.EarthquakeMarker"/>
+<fullyQualifiedTypeName name="processing.core.PGraphics"/>
+<fullyQualifiedTypeName name="de.fhpotsdam.unfolding.marker.AbstractMarker"/>
+<fullyQualifiedTypeName name="de.fhpotsdam.unfolding.marker.SimplePointMarker"/>
+<fullyQualifiedTypeName name="java.awt.print.Paper"/>
+<fullyQualifiedTypeName name="processing.core.PApplet"/>
+<fullyQualifiedTypeName name="module5.EarthquakeMarker"/>
+<fullyQualifiedTypeName name="module5.CommonMarker"/>
 </qualifiedTypeNameHistroy>

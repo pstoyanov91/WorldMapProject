@@ -25,11 +25,15 @@ import de.fhpotsdam.unfolding.marker.Marker;
  */
 public class LifeExpectancy extends PApplet {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	UnfoldingMap map;
 	HashMap<String, Float> lifeExpMap;
 	List<Feature> countries;
 	List<Marker> countryMarkers;
-
+	
 	public void setup() {
 		size(800, 600, OPENGL);
 		map = new UnfoldingMap(this, 50, 50, 700, 500, new Google.GoogleMapProvider());

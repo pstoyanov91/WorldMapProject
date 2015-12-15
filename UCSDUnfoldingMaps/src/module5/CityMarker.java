@@ -1,8 +1,10 @@
 package module5;
 
+
 import de.fhpotsdam.unfolding.data.Feature;
 import de.fhpotsdam.unfolding.data.PointFeature;
 import de.fhpotsdam.unfolding.geo.Location;
+import processing.core.PConstants;
 import processing.core.PGraphics;
 
 /** Implements a visual marker for cities on an earthquake map
@@ -45,8 +47,11 @@ public class CityMarker extends CommonMarker {
 	/** Show the title of the city if this marker is selected */
 	public void showTitle(PGraphics pg, float x, float y)
 	{
-		
-		// TODO: Implement this method
+		pg.fill(230,230,250);
+		pg.rect(x, y, 200, 20);
+		pg.fill(0, 0, 0);
+		pg.textAlign(PConstants.LEFT, PConstants.CENTER);
+		pg.text(getCity() + "; " + getCountry() + "; " + getPopulation(), x+25, y+8);
 	}
 	
 	/* Local getters for some city properties.  
