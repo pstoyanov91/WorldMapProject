@@ -4,14 +4,14 @@ public class EntryPoint {
 	
 	public static void main(String[] args) {
 		
-		final long startTime = System.nanoTime();
+		final long startTime = System.currentTimeMillis();
 		
 		HandleAirportData airportData = new HandleAirportData();
 		airportData.loadData("data/airports.dat");
 
-		final long endTime = System.nanoTime();
+		final long endTime = System.currentTimeMillis();
 		
-		System.out.println("Loading airports time: " + (endTime - startTime) + "ns "  + airportData.getAirports().size());
+		System.out.println("Loading airports time: " + (endTime - startTime) + "ms" );
 		
 		final long startTime1 = System.nanoTime();
 		
@@ -36,8 +36,6 @@ public class EntryPoint {
 		
 		final long endTime2 = System.nanoTime();
 		
-		System.out.println("Binary search time: " + (endTime2 - startTime2) + "ns" );
-		
-		airportData.writeDataToFile("data/aiportsOut.txt");
+		System.out.println("Linear search time: " + (endTime2 - startTime2) + "ns" );
 	}
 }

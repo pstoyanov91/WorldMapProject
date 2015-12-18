@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.io.PrintStream;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Scanner;
 
 
 public class HandleAirportData {
@@ -31,7 +32,7 @@ public class HandleAirportData {
 			String currLine = null;
 			
 			while( ( currLine = bufferReader.readLine()) != null){
-
+				currLine = fileReader.nextLine();
 				String[] columns = currLine.split(",");
 				
 				//System.out.println(Arrays.deepToString(columns));
@@ -51,12 +52,7 @@ public class HandleAirportData {
 		}catch(Exception e){
 			e.printStackTrace();
 		}finally {
-			try {
-				bufferReader.close();
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+			bufferReader.close();
 		}
 		
 		return this.airports;

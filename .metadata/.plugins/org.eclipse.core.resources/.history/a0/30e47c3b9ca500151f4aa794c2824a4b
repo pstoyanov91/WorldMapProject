@@ -36,7 +36,7 @@ public class EntryPoint {
 		
 		final long endTime2 = System.nanoTime();
 		
-		System.out.println("Binary search time: " + (endTime2 - startTime2) + "ns" );
+		System.out.println("Linear search time: " + (endTime2 - startTime2) + "ns" );
 		
 		airportData.writeDataToFile("data/aiportsOut.txt");
 	}
