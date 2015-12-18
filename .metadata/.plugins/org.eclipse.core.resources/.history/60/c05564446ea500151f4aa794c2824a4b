@@ -1,0 +1,10 @@
+package airports;
+
+public class HandleAirportData {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

@@ -1,0 +1,54 @@
+package airports;
+
+import java.io.File;
+import java.util.Arrays;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Scanner;
+
+
+public class HandleAirportData {
+	
+	private List<Airports> airports = new LinkedList<Airports>();
+	
+	public List<Airports> loadData(String pathToFile){
+		
+		Scanner fileReader = null;
+		
+		try{
+			//System.out.println(new java.io.File("").getAbsolutePath());
+			
+			fileReader = new Scanner(new File(pathToFile));
+			String currLine = null;
+			
+			while(fileReader.hasNextLine()){
+				currLine = fileReader.nextLine();
+				String[] columns = currLine.split(",");
+				
+				//System.out.println(Arrays.deepToString(columns));
+				int id = Integer.parseInt(columns[0]);
+				String city = columns[1].replace("\"", "");
+				String country = columns[3].replace("\"", "");
+				String code = columns[4].replace("\"", "");
+				
+				System.out.println(id+" " + city + " " + country + " " + " " + code );
+				
+				
+			}
+			
+		}catch(Exception e){
+			e.printStackTrace();
+		}finally {
+			if(fileReader!=null){
+				fileReader.close();
+			}
+		}
+		
+		return this.airports;
+	}
+	
+	public List<Airports> getAirports(){
+		return this.airports;
+	}
+
+}

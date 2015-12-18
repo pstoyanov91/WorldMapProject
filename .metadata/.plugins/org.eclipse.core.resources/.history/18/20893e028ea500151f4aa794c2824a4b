@@ -1,0 +1,28 @@
+package airports;
+
+public class EntryPoint {
+	
+	public static void main(String[] args) {
+		
+		final long startTime = System.currentTimeMillis();
+		
+		HandleAirportData airportData = new HandleAirportData();
+		airportData.loadData("data/airports.dat");
+
+		final long endTime = System.currentTimeMillis();
+		
+		System.out.println("Loading airports time: " + (endTime - startTime) + "ms" );
+		
+		final long startTime1 = System.currentTimeMillis();
+		
+		 Airports airport = airportData.findAirportCode("Plovdiv");
+		 if(airport!=null){
+			 System.out.println( airport.getId() + " Code: " + airport.getCode3());
+		 }
+		 
+		
+		final long endTime1 = System.currentTimeMillis();
+		
+		System.out.println("Linear search time: " + (endTime1 - startTime1) + "ms" );
+	}
+}

@@ -1,0 +1,25 @@
+package airports;
+
+public class EntryPoint {
+	
+	public static void main(String[] args) {
+		
+		final long startTime = System.currentTimeMillis();
+		
+		HandleAirportData airportData = new HandleAirportData();
+		airportData.loadData("data/airports.dat");
+
+		final long endTime = System.currentTimeMillis();
+		
+		System.out.println("Loading airports time: " + (endTime - startTime) + "ms" );
+		
+		final long startTime1 = System.currentTimeMillis();
+		
+		 String airportCode = airportData.findAirportCode("Beijing");
+		 System.out.println("Code: " + airportCode);
+		
+		final long endTime1 = System.currentTimeMillis();
+		
+		System.out.println("Linear search time: " + (endTime1 - startTime1) + "ms" );
+	}
+}

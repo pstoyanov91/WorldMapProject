@@ -1,0 +1,16 @@
+package airports;
+
+public class EntryPoint {
+	
+	public static void main(String[] args) {
+		
+		final long startTime = System.currentTimeMillis();
+		
+		HandleAirportData airportData = new HandleAirportData();
+		airportData.loadData("data/airports.dat");
+
+		final long endTime = System.currentTimeMillis();
+		
+		System.out.println("Total execution time: " + (endTime - startTime) + "ms" );
+	}
+}

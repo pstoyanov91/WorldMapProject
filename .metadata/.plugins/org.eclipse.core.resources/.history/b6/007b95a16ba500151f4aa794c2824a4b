@@ -1,0 +1,7 @@
+package airports;
+
+public class Airports {
+	private int id;
+	private String city;
+	private String country;
+}

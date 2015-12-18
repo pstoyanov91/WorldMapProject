@@ -1,0 +1,11 @@
+package airports;
+
+public class EntryPoint {
+	
+	public static void main(String[] args) {
+		
+		HandleAirportData airportData = new HandleAirportData();
+		airportData.loadData("../../data/airports.dat");
+
+	}
+}
