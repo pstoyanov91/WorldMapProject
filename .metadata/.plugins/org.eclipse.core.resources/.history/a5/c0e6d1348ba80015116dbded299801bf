@@ -1,0 +1,52 @@
+package airports;
+
+public class Airports implements Comparable<Airports>{
+	private int id;
+	private String city;
+	private String country;
+	private String code3;
+	
+	public Airports(int id, String city, String country, String code3){
+		this.id = id;
+		this. city = city;
+		this.country = country;
+		this.code3 = code3;
+	}
+	
+	
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public String getCity() {
+		return city;
+	}
+	public void setCity(String city) {
+		this.city = city;
+	}
+	public String getCountry() {
+		return country;
+	}
+	public void setCountry(String country) {
+		this.country = country;
+	}
+	public String getCode3() {
+		return code3;
+	}
+	public void setCode3(String code3) {
+		this.code3 = code3;
+	}
+
+
+	@Override
+	public int compareTo(Airports o) {
+		// TODO Auto-generated method stub
+		return this.getCity().compareTo(o.getCity());
+	}
+	
+	
+	
+	
+}

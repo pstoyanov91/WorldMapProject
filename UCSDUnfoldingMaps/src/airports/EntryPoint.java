@@ -1,38 +1,47 @@
 package airports;
 
+import java.util.Collections;
+import java.util.Comparator;
 
 public class EntryPoint {
 	
 	public static void main(String[] args) {
 		
-		final long startTime = System.nanoTime();
+		// Define comparator for sorting the list by city
+		final Comparator<Airports> SORT_BY_CITY = new Comparator<Airports>() {
+			public int compare(Airports a1, Airports a2){
+				return a1.getCity().compareTo(a2.getCity());
+			}
+		};
+
 		
 		HandleAirportData airportData = new HandleAirportData();
 		airportData.loadData("data/airports.dat");
 
-		final long endTime = System.nanoTime();
-		
-		System.out.println("Loading airports time: " + (endTime - startTime) + "ns "  + airportData.getAirports().size());
-		
-		System.out.println(airportData.getElement(airportData.getAirports().size()-1));
-		
-		// -----------------------------------------------------------------------------------------------------------
-		final long startTime1 = System.nanoTime();
-		
-		 /*Airports airport = airportData.findAirportLinear("Plovdiv");
+		 Airports airport = airportData.findAirportLinear("Plovdiv");
 		 if(airport!=null){
 			 System.out.println( airport.getId() + " Code: " + airport.getCode3());
 		 }
 		 
-		*/
+
+		
+		airportData.writeDataToFile("data/buldInSort1.txt");
+		Collections.sort(airportData.getAirports(), SORT_BY_CITY);
+		airportData.writeDataToFile("data/buldInSort2.txt");
+		
+		Collections.sort(airportData.getAirports());
+		airportData.writeDataToFile("data/buldInSort3.txt");
+		/*  Custom sorting
+		
+		final long startTime3 = System.nanoTime();
+		
 		airportData.sortByCitySelectionAlgorithm();
-		final long endTime1 = System.nanoTime();
 		
-		System.out.println("Sort time: " + (endTime1 - startTime1) + "ns" );
+		final long endTime3 = System.nanoTime();
 		
-		//---------------------------------------------------------------------------------------------------------------
+		System.out.println("Sort time: " + (endTime3 - startTime3) + "ns" );
 		
-		/*final long startTime2 = System.nanoTime();
+		*/
 		
 		Airports airport2 = airportData.findAirportBinary("Plovdiv");
 		 
@@ -40,15 +49,7 @@ public class EntryPoint {
 			 System.out.println( airport2.getId() + " Code: " + airport2.getCode3());
 		 }
 		 
-		
-		final long endTime2 = System.nanoTime();
-		
-		System.out.println("Binary search time: " + (endTime2 - startTime2) + "ns" );
-		*/
-		//------------------------------------------------------------------------------------------------------------------
-		
-		
-		//airportData.writeDataToFile("data/aiportsOut.txt");
+
 		System.out.println("Done!");
 	}
 }

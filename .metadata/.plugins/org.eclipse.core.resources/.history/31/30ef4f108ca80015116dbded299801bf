@@ -1,0 +1,55 @@
+package airports;
+
+import java.util.Collections;
+import java.util.Comparator;
+
+public class EntryPoint {
+	
+	public static void main(String[] args) {
+		
+		// Define comparator for sorting the list
+		final Comparator<Airports> SORT_BY_CITY = new Comparator<Airports>() {
+			public int compare(Airports a1, Airports a2){
+				return a1.getCity().compareTo(a2.getCity());
+			}
+		};
+
+		
+		HandleAirportData airportData = new HandleAirportData();
+		airportData.loadData("data/airports.dat");
+
+		 Airports airport = airportData.findAirportLinear("Plovdiv");
+		 if(airport!=null){
+			 System.out.println( airport.getId() + " Code: " + airport.getCode3());
+		 }
+		 
+
+		
+		airportData.writeDataToFile("data/buldInSort1.txt");
+		Collections.sort(airportData.getAirports(), SORT_BY_CITY);
+		airportData.writeDataToFile("data/buldInSort2.txt");
+		
+		Collections.sort(airportData.getAirports());
+		airportData.writeDataToFile("data/buldInSort3.txt");
+		/*  Custom sorting
+		
+		final long startTime3 = System.nanoTime();
+		
+		airportData.sortByCitySelectionAlgorithm();
+		
+		final long endTime3 = System.nanoTime();
+		
+		System.out.println("Sort time: " + (endTime3 - startTime3) + "ns" );
+		
+		*/
+		
+		Airports airport2 = airportData.findAirportBinary("Plovdiv");
+		 
+		 if(airport2!=null){
+			 System.out.println( airport2.getId() + " Code: " + airport2.getCode3());
+		 }
+		 
+
+		System.out.println("Done!");
+	}
+}

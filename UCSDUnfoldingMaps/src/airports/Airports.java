@@ -1,6 +1,6 @@
 package airports;
 
-public class Airports {
+public class Airports implements Comparable<Airports>{
 	private int id;
 	private String city;
 	private String country;
@@ -38,6 +38,14 @@ public class Airports {
 	public void setCode3(String code3) {
 		this.code3 = code3;
 	}
+
+
+	@Override
+	public int compareTo(Airports o) {
+		return this.getCountry().compareTo(o.getCountry());
+	}
+	
+	
 	
 	
 }
